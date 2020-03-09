@@ -1,2 +1,0 @@
-# second-portfolio
-second-portfolio
