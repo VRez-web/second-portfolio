@@ -10,7 +10,7 @@ function init() {
     main.style.display = 'flex';
 
     setTimeout(() => (main.style.opacity = 1), 50);
-  }, 5500);
+  }, 3200);
 }
 init();
 
@@ -75,4 +75,22 @@ navToggle.on('click', function (event) {
   event.preventDefault();
 
   nav.toggleClass("show");
+});
+
+
+// mail send
+$("form").submit(function() { //Change
+  var th = $(this);
+  $.ajax({
+    type: "POST",
+    url: "mail.php", //Change
+    data: th.serialize()
+  }).done(function() {
+    alert("Thank you!");
+    setTimeout(function() {
+      // Done Functions
+      th.trigger("reset");
+    }, 1000);
+  });
+  return false;
 });
